@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dnd5e-reddit-scraper"
+version = "0.1.0"
+description = ""
+authors = ["Beaver <8586904+PragmaticBeaver@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "dnd5e_reddit_scraper"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytesseract = "^0.3.10"
+Pillow = "^9.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
