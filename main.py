@@ -1,11 +1,15 @@
-from PIL import Image
-from pytesseract import pytesseract
+from dotenv import load_dotenv
+import os
+import praw
 
-path_to_tesseract = r"/opt/homebrew/bin/tesseract"
-pytesseract.tesseract_cmd = path_to_tesseract
+load_dotenv()
 
-path_to_img = "images/the deepest dark.png"
-img = Image.open(path_to_img)
+reddit = praw.Reddit(
+    client_id=os.getenv("CLIENT_ID"),
+    client_secret=os.getenv("SECRET"),
+    user_agent=os.getenv("USER_AGENT"),
+)
 
-text = pytesseract.image_to_string(img)
-print(text)
+hot_posts = reddit.subreddit("AskReddit").hot(limit=10)
+for post in hot_posts:
+    print(post.title)
