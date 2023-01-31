@@ -11,7 +11,7 @@ reddit = praw.Reddit(
 )
 
 # hot posts
-hot_posts = reddit.subreddit("AskReddit").hot(limit=10)
+hot_posts = reddit.subreddit(os.getenv("SUBREDDIT")).hot(limit=10)
 for post in hot_posts:
     # post.over_18
     print(post.title)  # Post title
