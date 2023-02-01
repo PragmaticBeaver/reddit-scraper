@@ -10,6 +10,7 @@ packages = [{include = "dnd5e_reddit_scraper"}]
 python = "^3.10.9"
 praw = "^7.6.1"
 python-dotenv = "^0.21.1"
+requests = "^2.28.2"
 
 
 [tool.poetry.group.dev.dependencies]
